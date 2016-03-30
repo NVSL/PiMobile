@@ -1,0 +1,48 @@
+README for gadget: PiMobile
+
+Components:
+	brain:	raspberrypy-zero
+	battery:	battery-9V-vertical
+	drive:	dual-motor-kit-narrow-fast
+	bump:	bump-switch-medium-left
+	bump_2:	bump-switch-medium-right
+	caster:	ball-caster-0.75in
+	led:	LED-5mm-bright-red
+	led_2:	LED-5mm-bright-green
+	bump_3:	bump-switch-medium-left
+	bump_4:	bump-switch-medium-right
+	penholder:	pen-holder
+	button:	tactile-button-round-yellow
+	button_2:	tactile-button-round-gray
+	led_3:	LED-5mm-bright-blue
+	led_4:	LED-5mm-bright-red
+	led_5:	LED-5mm-bright-green
+	led_6:	LED-5mm-bright-blue
+
+Connections:
+	(brain.GPIO12_0_brain, drive.PWMA_2_drive)
+	(brain.GPIO13_0_brain, drive.PWMB_2_drive)
+	(brain.GPIO2/SDA1_0_brain, drive.STBY_2_drive)
+	(brain.GPIO3/SCL1_0_brain, drive.AIN1_2_drive)
+	(brain.GPIO4/GCKL_0_brain, drive.AIN2_2_drive)
+	(brain.GPIO5_0_brain, drive.BIN1_2_drive)
+	(brain.GPIO6_0_brain, drive.BIN2_2_drive)
+	(brain.!CE!/GPIO7_0_brain, bump.SENSE_3_bump)
+	(brain.!CE0!/GPIO8_0_brain, bump_2.SENSE_4_bump_2)
+	(brain.GPIO9/MISO_0_brain, led.CONTROL_6_led)
+	(brain.GPIO10/MOSI_0_brain, led_2.CONTROL_7_led_2)
+	(brain.GPIO11/SCLK_0_brain, bump_3.SENSE_8_bump_3)
+	(brain.TXD0/GPIO14_0_brain, bump_4.SENSE_9_bump_4)
+	(brain.RXD0/GPIO15_0_brain, button.SENSE_11_button)
+	(brain.GPIO16_0_brain, button_2.SENSE_12_button_2)
+	(brain.GPIO17/GEN0_0_brain, led_3.CONTROL_13_led_3)
+	(brain.GPIO18_0_brain, led_4.CONTROL_14_led_4)
+	(brain.GPIO19_0_brain, led_5.CONTROL_15_led_5)
+	(brain.GPIO20_0_brain, led_6.CONTROL_16_led_6)
+	[brain.5V_0_brain, drive.VCC_2_drive]
+	[battery.POS_1_battery, drive.VM_2_drive]
+	[brain.GND_0_brain, battery.NEG_1_battery, drive.GND_2_drive, button.GND_11_button, bump_4.GND_9_bump_4, led.GND_6_led, led_5.GND_15_led_5, led_2.GND_7_led_2, led_3.GND_13_led_3, bump_3.GND_8_bump_3, button_2.GND_12_button_2, led_6.GND_16_led_6, led_4.GND_14_led_4, bump_2.GND_4_bump_2, bump.GND_3_bump]
+
+Power plan:
+	brain.5V_out provides power to drive.VCC
+	battery.+9V_out provides power to drive.VM
